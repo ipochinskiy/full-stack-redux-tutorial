@@ -1,2 +1,3 @@
-# full-stack-redux-tutorial
-Just following a tutorial to learn some Full-stack Redux
+# Organizing live votes for people gatherings
+
+Just following a [tutorial](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) to learn some Full-stack Redux
