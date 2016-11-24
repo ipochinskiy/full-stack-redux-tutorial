@@ -1,3 +1,5 @@
-export function setEntries(state, entries) {
-  return state.set('entries', entries);
+import { List } from 'immutable';
+
+export const setEntries = (state, entries) => {
+  return state.set('entries', List(entries));
 }
