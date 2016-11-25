@@ -1,5 +1,9 @@
+var webpack = require('webpack');
+
 module.exports = {
     entry: [
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
         './app/index.js',
     ],
     module: {
@@ -21,5 +25,9 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
+        hot: true,
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
 };
