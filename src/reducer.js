@@ -1,6 +1,6 @@
-import { setEntries, next, vote } from './core';
+import { setEntries, next, vote, INITIAL_STATE } from './core';
 
-const reducer = (state, action) => {
+const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'SET_ENTRIES':
             return setEntries(state, action.entries);
