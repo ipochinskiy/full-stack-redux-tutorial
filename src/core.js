@@ -44,9 +44,9 @@ export const next = (state) => {
     });
 }
 
-export const vote = (state, entry) => {
-    return state.updateIn(
-        ['vote', 'tally', entry],
+export const vote = (voteState, entry) => {
+    return voteState.updateIn(
+        [ 'tally', entry ],
         0,
         tally => tally + 1
     );
