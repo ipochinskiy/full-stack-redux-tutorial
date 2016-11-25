@@ -17,6 +17,7 @@
     "mocha": "^3.1.2"
   },
   "scripts": {
+    "start": "babel-node index.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js --recursive",
     "test:watch": "npm run test -- --watch"
   },
