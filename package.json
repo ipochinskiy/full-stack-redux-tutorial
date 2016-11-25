@@ -10,6 +10,7 @@
     "chai": "^3.5.0",
     "immutable": "^3.8.1",
     "redux": "^3.6.0",
+    "socket.io": "^1.6.0"
   },
   "devDependencies": {
     "chai-immutable": "^1.6.0",
