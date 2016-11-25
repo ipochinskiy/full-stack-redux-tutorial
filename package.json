@@ -25,9 +25,11 @@
   "scripts": {
     "start": "npm run start:backend",
     "start:backend": "babel-node index.js",
+    "start:frontend": "webpack-dev-server",
     "test": "npm run test:backend",
     "test:backend": "mocha --compilers js:babel-core/register --require ./test/backend/test-helper.js --recursive",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack"
   },
   "babel": {
     "presets": [
