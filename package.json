@@ -6,6 +6,7 @@
   "dependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.18.0",
     "immutable": "^3.8.1",
     "react": "^15.4.1",
@@ -30,10 +31,10 @@
     "start": "npm run start:backend",
     "start:backend": "babel-node index.js",
     "start:frontend": "webpack-dev-server",
-    "test": "npm run mocha:compile -- \"test/**/*@(.js|.jsx)\"",
-    "mocha:compile": "mocha --compilers js:babel-core/register --require ./test/test-helper.js",
-    "test:backend": "npm run mocha:compile -- test/backend --recursive",
-    "test:frontend": "npm run mocha:compile -- \"test/frontend/**/*@(.js|.jsx)\"",
+    "test": "npm run mocha:compile",
+    "mocha:compile": "mocha --compilers js:babel-core/register --require ./test/test-helper.js --recursive",
+    "test:backend": "npm run mocha:compile -- test/backend",
+    "test:frontend": "npm run mocha:compile -- test/frontend",
     "test:watch": "npm run test -- --watch",
     "build": "webpack"
   },
@@ -43,7 +44,7 @@
       "react"
     ],
     "plugins": [
-        "react-hot-loader/babel"
+      "react-hot-loader/babel"
     ]
   },
   "repository": {
