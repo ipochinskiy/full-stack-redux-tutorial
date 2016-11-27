@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Winner from './Winner';
 import Vote from './Vote';
 
-export default class Voting extends Component {
+export default class Voting extends PureComponent {
     render() {
         return (
             <div>
