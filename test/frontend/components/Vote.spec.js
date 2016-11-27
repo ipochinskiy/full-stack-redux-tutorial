@@ -7,12 +7,13 @@ import {
 } from 'react-addons-test-utils';
 import { expect } from 'chai';
 
-import Voting from '../../../app/components/Voting';
+import Vote from '../../../app/components/Vote';
 
-describe('Voting', () => {
+describe('Vote', () => {
     it('renders a pair of buttons', () => {
+
         const component = renderIntoDocument(
-            <Voting pair={[ 'Trainspotting', '28 Days Later' ]} />
+            <Vote pair={[ 'Trainspotting', '28 Days Later' ]} />
         );
         const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
 
@@ -25,7 +26,7 @@ describe('Voting', () => {
         let votedWith;
 
         const component = renderIntoDocument(
-            <Voting
+            <Vote
                 pair={[ 'Trainspotting', '28 Days Later' ]}
                 vote={(entry) => votedWith = entry}
             />
@@ -34,5 +35,5 @@ describe('Voting', () => {
         Simulate.click(buttons[0]);
 
         expect(votedWith).to.equal('Trainspotting');
-    })
+    });
 });
