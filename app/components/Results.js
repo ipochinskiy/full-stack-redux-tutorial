@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 
+import Winner from './Winner';
+
 export default class Results extends PureComponent {
     getPair() {
         return this.props.pair || [];
@@ -13,6 +15,11 @@ export default class Results extends PureComponent {
     }
 
     render() {
+        if (!!this.props.winner) {
+            return (
+                <Winner ref="winner" winner={this.props.winner} />
+            );
+        }
         return (
             <div className='results'>
                 <div className='tally'>
