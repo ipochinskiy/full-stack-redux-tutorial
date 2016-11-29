@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory } from 'react-router';
+import { Provider } from 'react-redux';
 
 import App from './components/App';
 import Voting from './components/Voting';
@@ -14,6 +15,8 @@ const routes = (
 );
 
 ReactDOM.render(
-    <Router history={hashHistory}>{routes}</Router>,
+    <Provider store={store}>
+        <Router history={hashHistory}>{routes}</Router>
+    </Provider>,
     document.getElementById('app')
 );
