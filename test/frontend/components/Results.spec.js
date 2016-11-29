@@ -8,7 +8,7 @@ import {
 import { List, Map } from 'immutable';
 import { expect } from 'chai';
 
-import Results from '../../../app/components/Results';
+import { Results } from '../../../app/components/Results';
 
 describe('Results', () => {
     it('renders entries with vote counts or zero', () => {

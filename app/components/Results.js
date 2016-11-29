@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 
 import Tally from './Tally';
 import Winner from './Winner';
 
-export default class Results extends PureComponent {
+export class Results extends PureComponent {
     render() {
         const { winner, next, pair, tally } = this.props;
 
@@ -32,3 +33,11 @@ export default class Results extends PureComponent {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    pair: state.getIn([ 'vote', 'pair' ]),
+    tally: state.getIn([ 'vote', 'tally' ]),
+    winner: state.get('winner')
+});
+
+export const ResultsContainer = connect(mapStateToProps)(Results);

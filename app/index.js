@@ -4,12 +4,12 @@ import { Router, Route, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import App from './components/App';
-import Results from './components/Results';
+import { ResultsContainer } from './components/Results';
 import { VotingContainer } from './components/Voting';
 
 const routes = (
     <Route component={App}>
-        <Route path='/results' component={Results} />
+        <Route path='/results' component={ResultsContainer} />
         <Route path='/' component={VotingContainer} />
     </Route>
 );
