@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+
 import Winner from './Winner';
 import Vote from './Vote';
 
-export default class Voting extends PureComponent {
+export class Voting extends PureComponent {
     render() {
         return (
             <div>
@@ -14,3 +16,10 @@ export default class Voting extends PureComponent {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    pair: state.getIn([ 'vote', 'pair' ]),
+    winner: state.get('winner')
+});
+
+export const VotingContainer = connect(mapStateToProps)(Voting);
