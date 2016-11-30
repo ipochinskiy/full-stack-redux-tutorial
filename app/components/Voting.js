@@ -19,6 +19,7 @@ export class Voting extends PureComponent {
 
 const mapStateToProps = (state) => ({
     pair: state.getIn([ 'vote', 'pair' ]),
+    hasVoted: state.get('hasVoted'),
     winner: state.get('winner')
 });
 
