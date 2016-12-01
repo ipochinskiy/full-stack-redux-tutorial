@@ -16,6 +16,9 @@ module.exports = {
                 query: {
                     presets: [ 'es2015', 'react' ],
                 },
+            }, {
+                test: /\.css$/,
+                loader: 'style!css!autoprefixer?browsers=last 2 versions',
             },
         ]
     },

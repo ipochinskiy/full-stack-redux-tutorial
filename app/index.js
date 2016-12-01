@@ -14,6 +14,8 @@ import remoteActionMiddleware from './remote-action-middleware';
 import reducer from './reducer';
 import { setState } from './action-creators';
 
+require('./style.css');
+
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
 
 const createStoreWithMiddleware = applyMiddleware(
