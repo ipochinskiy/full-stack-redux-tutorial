@@ -12,15 +12,14 @@ import App from './components/App';
 import { ResultsContainer } from './components/Results';
 import { VotingContainer } from './components/Voting';
 
+import { setState } from './action-creators';
+
 const store = createStore(reducer);
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
 socket.on(
     'state',
-    state => store.dispatch({
-        type: 'SET_STATE',
-        state,
-    })
+    state => setState(state)
 );
 
 const routes = (
