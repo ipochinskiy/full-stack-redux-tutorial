@@ -45,11 +45,9 @@ export const next = (state) => {
 }
 
 export const vote = (voteState, entry) => {
-    return voteState.updateIn(
-        [ 'tally', entry ],
-        0,
-        tally => tally + 1
-    );
+    return voteState.get('pair').includes(entry) ?
+        voteState.updateIn([ 'tally', entry ], 0, tally => tally + 1) :
+        voteState;
 }
 
 export const INITIAL_STATE = Map();
