@@ -8,3 +8,8 @@ export const vote = (entry) => ({
     meta: { remote: true },
     entry,
 });
+
+export const next = () => ({
+    type: 'NEXT',
+    meta: { remote: true },
+});
